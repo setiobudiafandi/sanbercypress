@@ -4,10 +4,7 @@ import 'cypress-xpath';
 
 describe('Login', () => {
   it('login sukses', () => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/')
-    cy.get(object.field_username).type("Admin");
-    cy.get(object.field_password).type("admin123");
-    cy.get(object.btn_login).click();
+    cy.login("Admin","admin123")
     //cy.wait(7000);
     cy.xpath(object1.text_dashboard).then($element => {
       // interact with the element as needed
